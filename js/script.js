@@ -68,10 +68,14 @@ createApp({
             if (this.autoplay) {
               this.intervalId = setInterval(this.nextSlide, 3000);
               this.buttonText = 'Stop Autoplay';
+              this.buttonText.style.backgroundColor = blue;
             } else {
               clearInterval(this.intervalId);
               this.buttonText = 'Start Autoplay';
             }
+        },
+        showImage(index) {
+            this.activeSlideIndex == index;
         },
     },
 }).mount('#app');
