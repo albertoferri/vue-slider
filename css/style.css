@@ -9,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .item {
@@ -102,4 +104,22 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
+}
+
+
+
+#autoplay{
+    padding: 8px 22px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider-wrapper{
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: hidden;
 }

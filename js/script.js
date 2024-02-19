@@ -5,6 +5,8 @@ createApp({
         return {
 
             activeSlideIndex: 0,
+            autoplay : false,
+            buttonText: 'Start Autoplay',
 
 
 
@@ -59,6 +61,17 @@ createApp({
         changeSlide(index) {
             console.log(index)
             this.activeSlideIndex = index
+        },
+
+        toggleAutoplay() {
+            this.autoplay = !this.autoplay;
+            if (this.autoplay) {
+              this.intervalId = setInterval(this.nextSlide, 3000);
+              this.buttonText = 'Stop Autoplay';
+            } else {
+              clearInterval(this.intervalId);
+              this.buttonText = 'Start Autoplay';
+            }
         },
     },
 }).mount('#app');
