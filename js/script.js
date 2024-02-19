@@ -8,7 +8,7 @@ createApp({
             activeSlideIndex: 0,
             autoplay : false,
             buttonText: 'Start Autoplay',
-            intervalId: "",
+            autoplayInterval: null,
 
 
 
@@ -42,7 +42,7 @@ createApp({
         }
     },
     mounted() {
-        setInterval(this.nextSlide, 3000); // Autoplay ogni 3 secondi
+        this.startAutoplay()
     },
     methods: {
         nextSlide() {
@@ -61,6 +61,18 @@ createApp({
             if (this.activeSlideIndex < 0) {
                 this.activeSlideIndex = this.slides.length - 1;
             }
+        },
+
+
+        // divisa funzione autoplay in inizio e fine per integrarle con il bonus 3
+        // Avvia l'autoplay
+        startAutoplay() {
+            autoplayInterval = setInterval(this.nextSlide, 3000); 
+        },
+
+        // Ferma l'autoplay quando il mouse entra nell'area dell'immagine
+        stopAutoplay() {
+            clearInterval(autoplayInterval); 
         },
 
         // autoplay
