@@ -33,13 +33,13 @@
                     <div @click="prevSlide" class="prev"></div>
                     <div @click="nextSlide" class="next"></div>
                     <div v-for="(thumbImg, index) in slides" class="thumb" :class=" index == activeSlideIndex ? 'active' : '' ">
-                        <img :src="thumbImg.image" alt="" @click="changeSlide(index)">
+                        <img :src="thumbImg.image" alt="" @click="showImage(index)">
                     </div>
                 </div>
 
                 
             </div>
-            <button @click="toggleAutoplay" id="autoplay">{{ buttonText }}</button>
+            <!-- <button @click="toggleAutoplay" id="autoplay">{{ buttonText }}</button> -->
         </div>
 
     </div>

@@ -4,9 +4,11 @@ createApp({
     data(){
         return {
 
+            // variabili definite da usare nelle funzioni
             activeSlideIndex: 0,
             autoplay : false,
             buttonText: 'Start Autoplay',
+            intervalId: "",
 
 
 
@@ -39,6 +41,9 @@ createApp({
             ],
         }
     },
+    mounted() {
+        setInterval(this.nextSlide, 3000); // Autoplay ogni 3 secondi
+    },
     methods: {
         nextSlide() {
             this.activeSlideIndex++;
@@ -59,17 +64,14 @@ createApp({
         },
 
         // autoplay
-        toggleAutoplay() {
-            this.autoplay = !this.autoplay;
-            if (this.autoplay) {
-              this.intervalId = setInterval(this.nextSlide, 3000);
-              this.buttonText = 'Stop Autoplay';
-              this.buttonText.style.backgroundColor = blue;
-            } else {
-              clearInterval(this.intervalId);
-              this.buttonText = 'Start Autoplay';
-            }
-        },
+        // toggleAutoplay() {
+        //     this.autoplay = !this.autoplay;
+        //     if (this.autoplay) {
+        //       this.intervalId = setInterval(this.nextSlide, 3000);
+        //     } else {
+        //       clearInterval(this.intervalId);
+        //     }
+        // },
 
         // cambio slide al click
         showImage(index) {
