@@ -58,11 +58,7 @@ createApp({
             }
         },
 
-        changeSlide(index) {
-            console.log(index)
-            this.activeSlideIndex = index
-        },
-
+        // autoplay
         toggleAutoplay() {
             this.autoplay = !this.autoplay;
             if (this.autoplay) {
@@ -74,8 +70,10 @@ createApp({
               this.buttonText = 'Start Autoplay';
             }
         },
+
+        // cambio slide al click
         showImage(index) {
-            this.activeSlideIndex == index;
+            this.activeSlideIndex = index;
         },
     },
 }).mount('#app');
